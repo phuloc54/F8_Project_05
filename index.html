@@ -98,9 +98,9 @@
     />
     <meta name="theme-color" content="#ffffff" />
 
-    <body>
+    <body style="height: 10000px">
         <!-- HEADER -->
-        <header class="header">
+        <header class="header header-fixed">
             <div class="container">
                 <div class="header-inner">
                     <div>
@@ -114,7 +114,11 @@
                     <nav class="navbar">
                         <ul class="navbar__list">
                             <li class="navbar__item">
-                                <a href="#home" title="Home" class="navbar__link">
+                                <a
+                                    href="#home"
+                                    title="Home"
+                                    class="navbar__link navbar__link--active"
+                                >
                                     Home
                                 </a>
                             </li>
@@ -154,5 +158,101 @@
                 </div>
             </div>
         </header>
+
+        <!-- HERO -->
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="row hero-inner">
+                        <!-- Hero left -->
+                        <div class="col-lg-6">
+                            <section class="hero-info">
+                                <p class="hero-info__sub-desc">
+                                    Digital Smart Wallet
+                                </p>
+                                <h1 class="hero-info__heading">
+                                    Digital
+                                    <span class="hero-info__highlight">Payment</span>
+                                    For Everyone.
+                                </h1>
+                                <p class="hero-info__desc section-desc">
+                                    We bring together eveything that’s required to
+                                    build websites and apps that accept payments and
+                                    send payouts globally. We are the best platform.
+                                </p>
+
+                                <form action="" class="hero__form">
+                                    <input
+                                        class="hero__form__input"
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        placeholder="Your email address"
+                                    />
+                                    <button
+                                        type="submit"
+                                        class="btn hero__btn-submit"
+                                    >
+                                        Get Started
+                                    </button>
+                                </form>
+
+                                <p class="hero-info__note">
+                                    *We’ll respect the inbox and never share your
+                                    email.
+                                </p>
+                            </section>
+                        </div>
+                        <!-- Hero right -->
+                        <div class="col-lg-5 offset-lg-1">
+                            <div class="hero-media">
+                                <img
+                                    src="./assets/img/hero-img.svg"
+                                    alt=""
+                                    class="hero-media__image"
+                                />
+                                <div>
+                                    <!-- Hero media decor 1 -->
+                                    <div class="hero-media__decor">
+                                        <div class="hero__decor__row">
+                                            <img
+                                                src="./assets/icon/hero-icon-1.svg"
+                                                alt="download-icon"
+                                            />
+                                            <p class="hero__decor__text">Deposite</p>
+                                            <p class="hero__decor__price">$32000</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Hero media decor 2 -->
+                                    <div class="hero-media__decor">
+                                        <div class="hero__decor__row">
+                                            <img
+                                                src="./assets/icon/hero-icon-2.svg"
+                                                alt="download-icon"
+                                            />
+                                            <div>
+                                                <p class="hero__decor__price">
+                                                    $1.310
+                                                </p>
+                                                <p class="hero__decor__text">
+                                                    SECURED FUNDS
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Hero media decor 3 -->
+                                    <div class="hero-media__decor">
+                                        <p class="hero__decor__percent">0%</p>
+                                        <p class="hero__decor__text">Interest</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </body>
 </html>
