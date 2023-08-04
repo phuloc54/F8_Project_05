@@ -58,6 +58,29 @@ a {
     line-height: 1.66; /* 166.667% */
 }
 
+.section__desc--first {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #696d77;
+    font-weight: 400;
+}
+
+.section__desc--first::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    background: #696d77;
+}
+
+.section-heading {
+    color: #212832;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.25; /* 125% */
+}
+
 /* ===========HEADER========= */
 .header {
     padding: 42px 0 0 12px;
@@ -146,22 +169,6 @@ a {
 
 .hero-inner {
     align-items: center;
-}
-
-.hero-info__sub-desc {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #696d77;
-    font-weight: 400;
-}
-
-.hero-info__sub-desc::before {
-    content: "";
-    display: inline-block;
-    width: 18px;
-    height: 2px;
-    background: #696d77;
 }
 
 .hero-info__heading {
@@ -308,4 +315,106 @@ a {
     margin-top: 5px;
     color: #fff;
     font-weight: 400;
+}
+
+/* ==========WORKS========= */
+.works {
+    margin-top: 80px;
+    padding-top: 80px;
+}
+
+.works-inner {
+    align-items: center;
+}
+
+.work-media {
+    position: relative;
+}
+
+.work__wrapper-image {
+    position: relative;
+}
+
+.work__image {
+    position: relative;
+    width: 456px;
+    height: 619px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.work__wrapper-image::after {
+    content: url(../img/work-bgc-img.svg);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 470px;
+    height: 550px;
+}
+
+.work__icon {
+    position: absolute;
+    top: 76px;
+    right: 162px;
+}
+
+.work__notify {
+    position: absolute;
+    right: 0;
+    bottom: 96px;
+    z-index: 2;
+}
+
+.work__notify__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: 226px;
+    height: 70px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fffdfa;
+    box-shadow: 0px 14px 34px 0px rgba(0, 0, 0, 0.07);
+}
+
+.work__notify__title {
+    color: #212832;
+    font-family: Inter;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.work__notify__desc {
+    margin-top: 5px;
+    color: #696d76;
+    font-family: Inter;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.work-content__heading {
+    margin-top: 12px;
+}
+
+.work-list {
+    margin-top: 70px;
+}
+
+.work-item + .work-item {
+    margin-top: 30px;
+}
+
+.work-item__heading {
+    color: #212832;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.45; /* 145.455% */
+    margin-bottom: 16px;
+}
+
+.work-item__desc {
+    color: #696d76;
+    font-weight: 400;
+    line-height: 1.75; /* 175% */
 }
