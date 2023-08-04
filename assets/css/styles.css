@@ -630,3 +630,125 @@ a {
 .features-2__method-item--more {
     background-color: #f9ea63;
 }
+
+/* ==========REVIEWS============= */
+.review {
+    padding: 80px 0;
+}
+
+.review-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.review__heading {
+    margin: 12px 0 18px;
+}
+
+.review__desc {
+    max-width: 435px;
+    font-size: 1.6rem;
+}
+
+.review-list {
+    flex-wrap: nowrap;
+    margin-top: 70px;
+    overflow: hidden;
+}
+
+.review-item:hover .review__blockquote {
+    border-color: transparent;
+    filter: drop-shadow(0px 22px 54px rgba(0, 0, 0, 0.07));
+}
+
+.review-item:hover .review__blockquote::after {
+    border-color: transparent;
+}
+
+.review__blockquote {
+    position: relative;
+    background-color: #fff;
+    padding: 42px 28px;
+    border: 1px solid #dfe2e8;
+    border-radius: 10px;
+    transition: ease 0.5s;
+}
+
+.review__blockquote::after {
+    position: absolute;
+    content: "";
+    bottom: -47px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    rotate: 45deg;
+    border: 1px solid;
+    border-color: transparent #dfe2e8 #dfe2e8 transparent;
+    transition: ease 0.5s;
+}
+
+.review__quote {
+    color: #696d76;
+    text-align: center;
+    font-size: 2.2rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.54; /* 154.545% */
+}
+
+.review-item__info {
+    margin-top: 90px;
+    text-align: center;
+}
+
+.review-item__wrapper-avt {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.review-item__avt {
+    width: 100%;
+    border-radius: inherit;
+}
+
+.review-item__name {
+    display: inline-block;
+    margin-top: 20px;
+    color: #070052;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.38; /* 138.462% */
+}
+
+.review-item__job {
+    margin-top: 2px;
+    color: #696d76;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.66; /* 166.667% */
+}
+
+.review-control {
+    width: 90px;
+    margin: 38px auto 0;
+    display: flex;
+    gap: 12px;
+}
+
+.review-control__mark {
+    width: 22px;
+    height: 6px;
+    border-radius: 1px;
+    border: 1px solid #9b9fab;
+}
+
+.review-control__mark--active {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
