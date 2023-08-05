@@ -26,6 +26,14 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
 
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
     <!-- Favicon -->
     <link
         rel="apple-touch-icon"
@@ -105,20 +113,30 @@
     <meta name="theme-color" content="#ffffff" />
 
     <body>
-        <!-- HEADER -->
+        <!-- HEADER - PC-->
         <header class="header header-fixed">
             <div class="container">
                 <div class="header-inner">
-                    <div>
-                        <img
-                            src="./assets/icon/logo.svg"
-                            alt="Celo-Bank"
-                            class="logo"
-                        />
-                    </div>
+                    <!-- Toggle Menu -->
+                    <label for="menu-checkbox" class="toggle-menu">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+                            />
+                        </svg>
+                    </label>
+                    <img
+                        src="./assets/icon/logo.svg"
+                        alt="Celo-Bank"
+                        class="logo-pc"
+                    />
 
                     <nav class="navbar">
-                        <ul class="navbar__list">
+                        <ul class="navbar__list" id="pc-nav">
                             <li class="navbar__item">
                                 <a
                                     href="#home"
@@ -165,13 +183,35 @@
             </div>
         </header>
 
+        <!-- HEADER TABLET AND MOBILE -->
+        <header class="header-mobile">
+            <input
+                type="checkbox"
+                name="menu-checkbox"
+                id="menu-checkbox"
+                hidden
+                class="menu-checkbox"
+            />
+            <label for="menu-checkbox" class="menu-overlay"></label>
+
+            <div class="menu-drawer">
+                <img src="./assets/icon/logo.svg" alt="Celo-Bank" class="logo" />
+
+                <ul id="mobile-nav"></ul>
+                <script>
+                    const pcNav = document.querySelector("#pc-nav");
+                    const mobileNav = document.querySelector("#mobile-nav");
+                    mobileNav.innerHTML = pcNav.innerHTML;
+                </script>
+            </div>
+        </header>
         <main>
             <!-- HERO -->
             <section class="hero">
                 <div class="container">
                     <div class="row hero-inner">
                         <!-- Hero left -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-md-6 col-12">
                             <section class="hero-info">
                                 <p class="section__desc--first">
                                     Digital Smart Wallet
@@ -210,7 +250,9 @@
                             </section>
                         </div>
                         <!-- Hero right -->
-                        <div class="col-lg-5 offset-lg-1">
+                        <div
+                            class="col-lg-5 offset-lg-1 col-md-6 offset-md-0 col-12"
+                        >
                             <div class="hero-media">
                                 <img
                                     src="./assets/img/hero-img.svg"
@@ -264,8 +306,19 @@
             <section class="works">
                 <div class="container">
                     <div class="row works-inner">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-12">
                             <!-- WORK LEFT -->
+
+                            <!-- Show on Tablet -->
+                            <div class="work-content--top show-on-tablet">
+                                <p class="section__desc--first">
+                                    Digital Smart Wallet
+                                </p>
+                                <h2 class="section-heading work-content__heading">
+                                    How It Works
+                                </h2>
+                            </div>
+
                             <div class="work-media">
                                 <div class="work__wrapper-image">
                                     <img
@@ -302,15 +355,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-5 offset-lg-1">
+                        <div class="col-lg-5 offset-lg-1 col-12">
                             <!-- WORKS RIGHT -->
                             <section class="work-content">
-                                <p class="section__desc--first">
-                                    Digital Smart Wallet
-                                </p>
-                                <h2 class="section-heading work-content__heading">
-                                    How It Works
-                                </h2>
+                                <div class="work-content--top show-on-pc">
+                                    <p class="section__desc--first">
+                                        Digital Smart Wallet
+                                    </p>
+                                    <h2
+                                        class="section-heading work-content__heading"
+                                    >
+                                        How It Works
+                                    </h2>
+                                </div>
 
                                 <!-- WORK LIST -->
                                 <ol class="work-list">
@@ -362,7 +419,7 @@
                 <div class="container">
                     <!-- FEATURES TOP -->
                     <div class="row features-inner">
-                        <div class="col-lg-5">
+                        <div class="col-lg-5 col-12">
                             <div class="features-content">
                                 <p class="section__desc--first">
                                     Digital Smart Wallet
@@ -401,7 +458,7 @@
                                 >
                             </div>
                         </div>
-                        <div class="col-lg-6 offset-lg-1">
+                        <div class="col-lg-6 offset-lg-1 col-12">
                             <div class="features-media">
                                 <img
                                     src="./assets/img/features-card.svg"
@@ -472,8 +529,17 @@
             <section class="features-2">
                 <div class="container">
                     <div class="row features-2-inner">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-12">
                             <div class="features-2-media">
+                                <div class="features-2__wrapper-top show-on-tablet">
+                                    <p class="section__desc--first">
+                                        Digital Smart Wallet
+                                    </p>
+                                    <h2 class="section-heading features__heading">
+                                        Transfer and Deposite Your Money Anytime
+                                    </h2>
+                                </div>
+
                                 <div class="features-2__wrapper-image">
                                     <img
                                         src="./assets/img/features-2-img.png"
@@ -534,14 +600,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-5 offset-lg-1">
+                        <div class="col-lg-5 offset-lg-1 col-12">
                             <div class="features-content">
-                                <p class="section__desc--first">
-                                    Digital Smart Wallet
-                                </p>
-                                <h2 class="section-heading features__heading">
-                                    Transfer and Deposite Your Money Anytime
-                                </h2>
+                                <div class="features-2__wrapper-top show-on-pc">
+                                    <p class="section__desc--first">
+                                        Digital Smart Wallet
+                                    </p>
+                                    <h2 class="section-heading features__heading">
+                                        Transfer and Deposite Your Money Anytime
+                                    </h2>
+                                </div>
                                 <p class="features-content__desc section-desc">
                                     We bring together eveything that’s required to
                                     build websites and apps that accept payments and
@@ -594,7 +662,7 @@
                     <!-- REVIEW LIST -->
                     <div class="row review-list">
                         <!-- Item 1 -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-md-6 col-12">
                             <div class="review-item">
                                 <blockquote class="review__blockquote">
                                     <p class="review__quote">
@@ -606,7 +674,7 @@
                                     </p>
                                 </blockquote>
 
-                                <article class="review-item__info">
+                                <article class="review-item__info col-md-6">
                                     <div class="review-item__wrapper-avt">
                                         <img
                                             src="./assets/img/review-01.jpg"
@@ -624,7 +692,7 @@
                         </div>
 
                         <!-- Item 2 -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-md-6 col-12">
                             <div class="review-item">
                                 <blockquote class="review__blockquote">
                                     <p class="review__quote">
@@ -654,7 +722,7 @@
                         </div>
 
                         <!-- Item 3 -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-md-6">
                             <div class="review-item">
                                 <blockquote class="review__blockquote">
                                     <p class="review__quote">
@@ -684,7 +752,7 @@
                         </div>
 
                         <!-- Item 4 -->
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-md-6">
                             <div class="review-item">
                                 <blockquote class="review__blockquote">
                                     <p class="review__quote">
@@ -721,6 +789,9 @@
                         ></div>
                         <div class="review-control__mark"></div>
                         <div class="review-control__mark"></div>
+                        <div class="review-control__mark show-on-mobile"></div>
+                        <div class="review-control__mark show-on-mobile"></div>
+                        <div class="review-control__mark show-on-mobile"></div>
                     </div>
                 </div>
             </div>
@@ -742,7 +813,7 @@
                     </section>
 
                     <div class="blog-list">
-                        <div class="row row-cols-2 blog-list-wrapper">
+                        <div class="row row-cols-lg-2 row-cols-1 blog-list-wrapper">
                             <div class="col">
                                 <!-- Item 1 -->
                                 <article class="blog-item">
@@ -858,6 +929,9 @@
                             </div>
                         </div>
                     </div>
+                    <a href="#!" class="btn blog__cta blog__cta--show show-on-mobile"
+                        >Read All</a
+                    >
                 </div>
             </section>
 
@@ -916,8 +990,8 @@
             <div class="container">
                 <div class="footer-inner">
                     <!-- First footer-Column -->
-                    <div class="footer-column">
-                        <img src="./assets/icon/logo.svg" alt="" />
+                    <div class="footer-column hide-on-pc">
+                        <img class="" src="./assets/icon/logo.svg" alt="" />
                     </div>
                     <!-- Second footer-column -->
                     <div class="footer-column">
@@ -988,7 +1062,6 @@
                             </button>
                         </form>
                     </div>
-
                 </div>
                 <div class="footer-row">
                     <a
@@ -997,11 +1070,15 @@
                         >phamphuloc123@gmail.com</a
                     >
 
-                    <a href="tel:+84123445679" class="footer__phoneNum-contact">(123) 456-7890</a>
+                    <a href="tel:+84123445679" class="footer__phoneNum-contact"
+                        >(123) 456-7890</a
+                    >
                 </div>
             </div>
 
-            <div class="footer__copyright">© 2020 Ligft Media All rights reserved.</div>
+            <div class="footer__copyright">
+                © 2020 Ligft Media All rights reserved.
+            </div>
         </footer>
     </body>
 </html>

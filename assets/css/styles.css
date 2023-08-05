@@ -59,7 +59,7 @@ a {
 }
 
 .section__desc--first {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 12px;
     color: #696d77;
@@ -91,7 +91,7 @@ a {
     position: sticky;
     top: -30px;
     left: 0;
-    z-index: 8;
+    z-index: 3;
 }
 
 .header-inner {
@@ -912,7 +912,8 @@ a {
 }
 
 .footer-inner {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
     gap: 163px;
     padding-top: 100px;
 }
